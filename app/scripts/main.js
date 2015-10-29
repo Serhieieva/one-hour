@@ -7,6 +7,10 @@ $(function () {
     return false;
   });
 
+  $('.button.contact-us').on('click', function () {
+    $('html, body').animate({scrollTop: $('#contact-us').offset().top}, 500);
+  });
+
   var mapNetwork = new google.maps.Map(document.getElementById('mapNetwork'), {
     center: new google.maps.LatLng(51.636069, -0.407119),
     zoom: 9,
@@ -55,32 +59,5 @@ $(function () {
     position: {lat: 53.710212, lng: -1.495720},
     icon: 'images/marker-contact.png'
   });
-
-
-
-  var amount = 0;
-  var speed = 100;
-
-  function doSetTimeout(a, s) {
-    speed = amount < 100 ? 100 : 10;
-
-    setTimeout(function () {
-      console.log(amount += speed);
-
-      if(amount < 37305) {
-        doSetTimeout(a, speed);
-      }
-
-    }, s);
-  }
-
-  doSetTimeout(amount, speed);
-
-
-function setDigit (element, digit) {
-
-}
-
-
 
 });
